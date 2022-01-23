@@ -41,8 +41,9 @@
             </svg>
 
         </div>
-        <div class="d-flex align-items-center justify-content-center">
-            <img alt="Responsive image" class="mt-5 d-block card-article__image img-fluid" src="/img/google-play-badge.png" width="200vw" />
+        <div class="d-flex flex-column align-items-center justify-content-center mt-5">
+            <p class="text-white-50" style="padding: 0; margin:0;">Downloads: @Current</p>
+            <img alt="Responsive image" class=" d-block card-article__image img-fluid" src="/img/google-play-badge.png" width="200vw" />
 
         </div>
     </article>
@@ -53,6 +54,9 @@
     // Demonstrates how a parent component can supply parameters
     [Parameter]
     public string ImagePath { get; set; } = string.Empty;
+
+    [Parameter]
+    public int Current { get; set; }
 
     [Parameter]
     public string Title { get; set; }

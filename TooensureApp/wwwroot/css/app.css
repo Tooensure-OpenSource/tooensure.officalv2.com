@@ -2,22 +2,64 @@
 
 
 
-html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+.video-bg-cover {
+    top: 0;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.931);
 }
 
-a, .btn-link {
-    color: #0366d6;
+.video-bg-cover--video {
+    opacity: .5;
+    position: relative;
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+.google-download {
+    width: 200px;
 }
 
-.content {
-    padding-top: 1.1rem;
+.body {
+    background-color: black;
+}
+
+.video-bg-cover--video {
+    width: 100%;
+    height: 100vh;
+}
+
+.logo-container {
+    position: absolute;
+    top: 30vh;
+    width: 100%;
+    text-align: center;
+}
+
+.promo-content {
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+    .logo-container {
+        position: relative;
+        width: 22rem;
+        float: left;
+    }
+
+    .promo-description {
+        padding: 100;
+    }
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
 }
 
 .valid.modified:not([type=checkbox]) {

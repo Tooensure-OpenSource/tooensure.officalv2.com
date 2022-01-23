@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>TooensureApp</title>
     <base href="/" />
+    <link rel="stylesheet" href="css/tooensure.css">
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
     <link href="TooensureApp.styles.css" rel="stylesheet" />
@@ -18,14 +19,39 @@
     <link rel="manifest" href="site.webmanifest">
 </head>
 
-<body style="height: 100vh; background-color: #448aff;">
-    <div id="app" style="max-width: 42em;" class="cover-container d-flex h-100 p-3 mx-auto flex-column">Loading...</div>
+<body style="height: 100vh; background-color: black;">
+    <div id="app">
+        <div class="min-h-screen flex flex-col justify-center items-center">
+            <div class="mx-auto p-6">
+                <div class="flex text-center justify-center space-x-10">
+                    <div class="relative w-80 h-80 max-w-full">
+                        
+                        <section class="absolute insert-0 w-full h-full">
+                            <svg class="nlin animate-spin" width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect class="" width="102" height="102" rx="10" fill="#448AFF" />
+                            </svg>
+                        </section>
 
-    <div id="blazor-error-ui">
+                        <section class="absolute insert-0 w-full h-full">
+                            <svg class="nlin" width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M56.4513 69.0631C51.1978 78.4486 75.9384 87.6569 61.4766 87.6569C50.1969 87.6569 40.1506 77.6899 47.7742 69.0631C56.7465 58.9104 27.2156 52.7715 38.4952 52.7715C49.7749 52.7715 63.2253 56.9613 56.4513 69.0631Z" fill="#F9F9F9" />
+                            <path d="M63.4164 31.7347C63.4164 41.4931 48.269 49.4657 39.0809 49.4657C29.8928 49.4657 50.6687 41.4931 50.6687 31.7347C50.6687 21.9762 29.8928 14.2852 39.0809 14.2852C48.269 14.2852 63.4164 21.9762 63.4164 31.7347Z" fill="#F9F9F9" />
+                        </svg>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div id="blazor-error-ui"> 
         An unhandled error has occurred.
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

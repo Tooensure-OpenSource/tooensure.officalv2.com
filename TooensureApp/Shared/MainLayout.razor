@@ -1,13 +1,77 @@
 ﻿@inherits LayoutComponentBase
 @inject NavigationManager navMan;
+
+<header class="fixed-top bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black dark:bg-slate-700 px-6 py-8 ring-1 ring-slate-500/5 shadow-xl">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <svg width="30" viewBox="0 0 96 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_d_224_127)">
+                        <rect x="63.3923" width="27.7309" height="58.1528" rx="2" transform="rotate(0.260189 63.3923 0)" fill="#47F879" />
+                        <rect x="32.645" y="27.7974" width="27.7309" height="30.0138" rx="2" transform="rotate(-89.8667 32.645 27.7974)" fill="#F847C6" />
+                        <path d="M34.5049 85.763C33.4003 85.7604 32.507 84.8629 32.5095 83.7583L32.5623 61.0642C32.5649 59.9596 33.4624 59.0662 34.567 59.0688L89.4666 59.1965C90.5712 59.1991 91.4645 60.0966 91.4619 61.2011L91.4091 83.8953C91.4066 84.9999 90.5091 85.8932 89.4045 85.8906L34.5049 85.763Z" fill="#F86747" />
+                        <rect x="4.39233" width="27.7309" height="86.2764" rx="2" transform="rotate(0.260189 4.39233 0)" fill="#F8DB47" />
+                    </g>
+                    <defs>
+                        <filter id="filter0_d_224_127" x="0.00952148" y="0.00927734" width="95.4524" height="94.3833" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset dy="4" />
+                            <feGaussianBlur stdDeviation="2" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_224_127" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_224_127" result="shape" />
+                        </filter>
+                    </defs>
+                </svg>
+            </a>
+            <button class="navbar-toggler dark:bg-slate-700 ring-1 ring-slate-500/5 shadow-xl collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    @* Link To Blog *@
+                    <li class="nav-item">
+                        <a class="nav-link" @onclick="OnBlogdClicked">Blog</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Apps
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Releases</a></li>
+                            <li><a class="dropdown-item" href="#">Center</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Policy</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>   
+<main>
+    <div class="">
+        @Body
+    </div>
+</main>
 @*<div class="sidebar">
         <NavMenu />
     </div>*@
-<header class="masthead">
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">
+@*<header class="masthead">
+    <nav class="navbar navbar-expand-lg navbar-light">*@
+        <!--<a class="navbar-brand" href="#">-->
             @*<img alt="Responsive image" class="mx-auto d-block card-article__image img-fluid" src="/img/readyapp-r-letter.png" width="20" />*@
-            <svg width="30" viewBox="0 0 96 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!--<svg width="30" viewBox="0 0 96 95" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_d_224_127)">
                     <rect x="63.3923" width="27.7309" height="58.1528" rx="2" transform="rotate(0.260189 63.3923 0)" fill="#47F879" />
                     <rect x="32.645" y="27.7974" width="27.7309" height="30.0138" rx="2" transform="rotate(-89.8667 32.645 27.7974)" fill="#F847C6" />
@@ -47,12 +111,9 @@
             </ul>
         </div>
     </nav>
-</header>
-<main class="d-flex align-items-center justify-content-center">
-    <div class="content px-4">
-        @Body
-    </div>
-</main>
+</header>-->
+
+
 @*<footer class="mastfoot mt-auto">
 
     Copyright Tooensure LLC</footer>*@
@@ -66,5 +127,10 @@
     private void OnPolicyClicked()
     {
         navMan.NavigateTo("/policy");
+    }
+
+    private void OnBlogdClicked()
+    {
+        navMan.NavigateTo("/blogs");
     }
 }

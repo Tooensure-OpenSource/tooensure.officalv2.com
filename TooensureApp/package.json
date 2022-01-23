@@ -1,0 +1,28 @@
+{
+  "name": "tooensureapp",
+  "version": "1.0.0",
+  "description": "Tooensure app",
+  "main": "index.js",
+  "scripts": {
+    "tail:css": "npx tailwindcss -i ./wwwroot/css/tailwind/input.css -o ./wwwroot/css/tooensure.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tooensure-OpenSource/tooensure.officalv2.com.git"
+  },
+  "keywords": [
+    "tooensure",
+    "ready",
+    "tooensure.com",
+    "toensure"
+  ],
+  "author": "Shawn Bellazan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tooensure-OpenSource/tooensure.officalv2.com/issues"
+  },
+  "homepage": "https://github.com/Tooensure-OpenSource/tooensure.officalv2.com#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.0.15"
+  }
+}

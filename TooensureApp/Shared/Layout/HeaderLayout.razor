@@ -1,0 +1,49 @@
+﻿@inject NavigationManager navMan;
+<section class="container-fluid">
+    <section class="row">
+        <!-- Start Column -->
+        <section class=" col-md-6 col-sm-12">
+            <section id="myvideo" class="video-bg-cover text-center">
+                <video class="video-bg-cover--video" playsinline muted autoplay loop>
+                    <source src="video/cover.mp4" type="video/mp4">
+                    <source src="video/cover.webm" type="video/webm">
+
+                    Your browser does not support the video tag.
+                </video>
+            </section>
+        </section>
+        <!-- End Column -->
+        <section class="animate-fade col-md-6 col-sm-12 logo-container">
+            <!-- Logo Section -->
+            <section class="text-light">
+                <section class="row">
+                    <div class="col-12">
+                        <!-- Promote SVG -->
+                        <svg class="nlin" width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect class="" width="102" height="102" rx="10" fill="#448AFF" />
+                            <path d="M56.4513 69.0631C51.1978 78.4486 75.9384 87.6569 61.4766 87.6569C50.1969 87.6569 40.1506 77.6899 47.7742 69.0631C56.7465 58.9104 27.2156 52.7715 38.4952 52.7715C49.7749 52.7715 63.2253 56.9613 56.4513 69.0631Z" fill="#F9F9F9" />
+                            <path d="M63.4164 31.7347C63.4164 41.4931 48.269 49.4657 39.0809 49.4657C29.8928 49.4657 50.6687 41.4931 50.6687 31.7347C50.6687 21.9762 29.8928 14.2852 39.0809 14.2852C48.269 14.2852 63.4164 21.9762 63.4164 31.7347Z" fill="#F9F9F9" />
+                        </svg>
+                        <section class="row mt-4 gy-3 promo-content">
+                            <div class="col-12 my-3">
+                                <!-- Promote description -->
+                                <section class="promo-description">
+                                    <p>Notify your cusumer when a product or service is ready</p>
+                                </section>
+                            </div>
+                            <div class="col-12  text-center">
+                                <!-- Promote Button -->
+                                <a href="https://play.google.com/store/apps/details?id=com.tooensure.readyapp">
+                                    <img class="animate-bounce nlin google-download rounded-xl shadow-lg flex items-center space-x-4" src="img/google-play-badge.png" />
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </section>
+</section>
+
+@code {
+}
