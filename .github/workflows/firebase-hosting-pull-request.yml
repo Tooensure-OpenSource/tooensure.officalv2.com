@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: dotnet publish -c Release -o release TooensureApp.csproj
+      - run: dotnet publish -c Release -o bin/Release/net5.0/wwwroot TooensureApp.csproj
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
