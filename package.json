@@ -4,7 +4,7 @@
   "description": "Tooensure app",
   "main": "index.js",
   "scripts": {
-    "tail:css": "npx tailwindcss -i ./wwwroot/css/tailwind/input.css -o ./wwwroot/css/tooensure.css --watch"
+    "tail:css": "npx tailwindcss -i ./TooensureApp/wwwroot/css/tailwind/input.css -o ./TooensureApp/wwwroot/css/tooensure.css --watch"
   },
   "repository": {
     "type": "git",

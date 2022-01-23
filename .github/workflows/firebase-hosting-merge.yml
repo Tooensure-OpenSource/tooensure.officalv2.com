@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: npm run tail:css
       - run: dotnet publish -c Release -o ./TooensureApp/bin/Release/net5.0/wwwroot ./TooensureApp/TooensureApp.csproj
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
