@@ -24,5 +24,8 @@
   "homepage": "https://github.com/Tooensure-OpenSource/tooensure.officalv2.com#readme",
   "devDependencies": {
     "tailwindcss": "^3.0.15"
+  },
+  "dependencies": {
+    "firebase": "^9.6.4"
   }
 }
