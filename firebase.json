@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "bin/Release/net5.0/wwwroot",
+    "public": "./TooensureApp/bin/Release/net5.0/wwwroot",
     "ignore": [
       "firebase.json",
       "**/.*",
