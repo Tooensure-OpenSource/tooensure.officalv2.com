@@ -26,7 +26,7 @@
                     </defs>
                 </svg>
             </a>
-            <button class="navbar-toggler dark:bg-slate-700 ring-1 ring-slate-500/5 shadow-xl collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button @onclick="DisplayNav" class="navbar-toggler dark:bg-slate-700 ring-1 ring-slate-500/5 shadow-xl collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -119,6 +119,20 @@
     Copyright Tooensure LLC</footer>*@
 @code
 {
+    public bool ShowNav { get; set; } = false;
+    public string Css { get; set; } = string.Empty;
+    private void DisplayNav()
+    {
+        ShowNav = !ShowNav;
+        if(ShowNav)
+        {
+            Css = "show translate-y-6 transform-gpu";
+        }
+        else
+        {
+            Css = string.Empty;
+        }
+    }
     private void OnHireClicked()
     {
         navMan.NavigateTo("/hire");

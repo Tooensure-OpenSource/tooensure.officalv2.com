@@ -7,6 +7,9 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using TooensureApp.Models.BlogModel;
+using TooensureApp.Services;
+using TooensureApp.Services.IService;
 
 namespace TooensureApp
 {
@@ -16,7 +19,7 @@ namespace TooensureApp
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
-
+            builder.Services.AddScoped<IBlogService, BlogServices>();
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             await builder.Build().RunAsync();
         }

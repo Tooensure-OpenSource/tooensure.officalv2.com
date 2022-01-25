@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Shared\BoxViewComponent.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Google.Cloud.Firestore" Version="2.5.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.13" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.13" PrivateAssets="all" />
@@ -27,6 +31,18 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Shared\BoxViewComponent.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Shared\BoxViewComponent.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Shared\BoxViewComponent.razor" />
   </ItemGroup>
 
 </Project>

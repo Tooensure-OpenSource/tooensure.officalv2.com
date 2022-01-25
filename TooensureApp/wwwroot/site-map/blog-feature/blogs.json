@@ -1,0 +1,29 @@
+﻿[
+  {
+    "id": 1,
+    "blogType":"Apps",
+    "src": "img/readyvsgoogle.png",
+    "sub": "Apps | Ready",
+    "title": "Can’t log into Ready,  Unknown Error",
+    "content": "App is in review and will be updated with new anomation and login system. Minor mistack caused by developing on the production domain logic implementing new features, authentication.",
+    "dateCreated": "Jan .10, 2022"
+  },
+  {
+    "id": 2,
+    "blogType":"Releases",
+    "src": "img/readyvsgoogle.png",
+    "sub": "Releases | Ready",
+    "title": "Can’t log into Ready,  Unknown Error",
+    "content": "Intergrated google authentication so users can easyily and seculy access Ready App. App is being carfully reviewed and will be back up befor 1/27/2022. Sorry for the inconevance.",
+    "dateCreated": "Jan .23, 2022"
+  },
+  {
+    "id": 3,
+    "blogType":"Updates",
+    "src": "img/readyvsgoogle.png",
+    "sub": "Updates | Ready",
+    "title": "Pending review",
+    "content": "The Ready App is pending review and has some nice animation expriments consisting of user navigation flow. We will try our best to fulfill our user experance.",
+    "dateCreated": "Jan .24, 2022"
+  }
+]

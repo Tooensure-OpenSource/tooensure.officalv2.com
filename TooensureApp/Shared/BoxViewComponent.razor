@@ -1,0 +1,21 @@
+﻿<LableComponent Text="@Sub"
+                Css="text-slate-800 mt-5 text-base font-medium tracking-tight" />
+
+<LableComponent Text="@Title"
+                Css="text-slate-700 dark:text-white mt-1 font-bold  tracking-tight text-3xl" />
+
+<LableComponent Text="@Content"
+                Css="text-slate-500 dark:text-slate-400 mt-5 text-lg" />
+
+<div class="text-right dark:text-slate-300 underline mt-5 text-lg">Let's Go</div>
+
+@code {
+    [Parameter]
+    public string Sub { get; set; }
+
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public string Content { get; set; }
+}

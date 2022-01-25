@@ -1,40 +1,83 @@
 ﻿@inject NavigationManager navMan;
-
-
+@using TooensureApp.Models
+@inject HttpClient Http
+@inject IBlogService blogService
 <section class="bg-white dark:bg-slate-700 px-6 py-8 ring-1 ring-slate-500/5 shadow-xl">
-      <section >
-        <div>
-          <span class="inline-flex mt-5 items-center justify-center p-2 rounded-md shadow-lg">
-            <a @onclick="OnBlogClicked">
-              <img src="img/readyvsgoogle.png"/>
-            </a>
-          </span>
+    <section>
+        <div @onclick="() => OnBlogClicked(Promoblog.Id)">
+            <span class="inline-flex mt-5 items-center justify-center p-2 rounded-md shadow-lg">
+                <a>
+                    @*<img src="img/readyvsgoogle.png" />*@
+                    <img src="@Promoblog.Src" />
+                </a>
+            </span>
         </div>
-        
+
         <!--  -->
-        <h3 @onclick="OnBlogClicked" class="text-slate-800 dark:text-white mt-5 text-base font-medium tracking-tight">Apps | Ready</h3>
-        <h2 @onclick="OnBlogClicked" class="text-slate-700 dark:text-white mt-1 font-bold  tracking-tight text-3xl">Can’t log into Ready,  Unknown Error</h2>
-        <p @onclick="OnBlogClicked" class="text-slate-500 dark:text-slate-400 mt-5 text-lg">
-          App is in review and will be updated with new anomation and login system....
-        </p>
-        <div @onclick="OnBlogClicked" class="text-right dark:text-slate-300 underline mt-5 text-lg">Let's Go</div>
-      
-      </section>
-      <section class="my-10">
-        <h2 class="text-slate-800 dark:text-white mt-1 font-bold underline  tracking-tight text-3xl">Latest</h2>
-      </section>
-      <section @onclick="OnBlogClicked" class="border-b-2 ">
-        <p class="text-slate-800 dark:text-white mt-5 text-base font-medium tracking-tight">Releases | Ready</p>
-        <h5 class="text-slate-800 dark:text-white mt-1 font-bold  tracking-tight text-1xl">Can’t log into Ready,  Unknown Error</h5>
-        <p class="text-slate-500 mb-4 dark:text-slate-400 mt-5 text-sm">
-          Intergrated google authentication so users can easyily and seculy access Ready App.        </p>
-      </section>
+        @*<h3 @onclick="OnBlogClicked" class="text-slate-800 dark:text-white mt-5 text-base font-medium tracking-tight">Apps | Ready</h3>*@
+    @* <NavLink href="@Promoblog.Url" target="_blank"> *@
+        <LableComponent Text="@Promoblog.Sub"
+                        Css="text-slate-800 mt-5 text-base font-medium tracking-tight" />
+
+        <LableComponent Text="@Promoblog.Title"
+                        Css="text-slate-700 dark:text-white mt-1 font-bold  tracking-tight text-3xl" />
+
+        <LableComponent Text=@Promoblog.Content
+                        Css="text-slate-500 dark:text-slate-400 mt-5 text-lg" />
+    @* </NavLink> *@
+
+
+        @*<p @onclick="OnBlogClicked" class="text-slate-500 dark:text-slate-400 mt-5 text-lg">
+            App is in review and will be updated with new anomation and login system....
+        </p>*@
+        <div class="text-right dark:text-slate-300 underline mt-5 text-lg">Let's Go</div>
+
     </section>
+    <section class="my-10">
+        <h2 class="text-slate-800 dark:text-white mt-1 font-bold underline  tracking-tight text-3xl">Latest</h2>
+    </section>
+    @foreach (var blog in Blogs)
+    {
+        if(blog.Id != Promoblog.Id)
+        {
+        <section @onclick="() => OnBlogClicked(blog.Id)" class="border-b-2 ">
+            <LableComponent Text="@blog.Sub" Css="text-slate-800 dark:text-white mt-5 text-base font-medium tracking-tight"/>
+            <LableComponent Text="@blog.Title" Css="text-slate-800 dark:text-white mt-1 font-bold  tracking-tight text-1xl"/>
+            <LableComponent Text="@blog.Content" Css="text-slate-500 mb-4 dark:text-slate-400 mt-5 text-sm"/>
+        </section>
+        }
+    }
+
+</section>
 
 @code
 {
-    private void OnBlogClicked()
+    private void OnBlogClicked(int id)
     {
-        navMan.NavigateTo("/blog");
+        navMan.NavigateTo($"/blogs/{id}");
+    }
+    public List<Blog> Blogs {get; set;} = new();
+    public Blog Promoblog { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var blogsFromService = await blogService.GetAll();
+        Blogs = blogsFromService.ToList();
+        Promoblog = GetPromoBlog(Blogs);
+        Promoblog.Content = Promoblog.Content.Split('.').FirstOrDefault();
+
+        foreach (var blog in Blogs)
+        {
+            blog.Content = blog.Content.Split('.').FirstOrDefault();
+        }
+    }
+    public Blog GetPromoBlog(List<Blog> blogs)
+    {
+        return blogs.FirstOrDefault();
+    }
+    public string GenerateSub()
+    {
+        var sentances = Promoblog.Content.Split('.');
+        return sentances.FirstOrDefault();
     }
 }
