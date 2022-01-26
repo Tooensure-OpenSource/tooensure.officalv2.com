@@ -73,7 +73,7 @@
     }
     public Blog GetPromoBlog(List<Blog> blogs)
     {
-        return blogs.FirstOrDefault();
+        return blogs.Where(x => x.Id == 4).FirstOrDefault();
     }
     public string GenerateSub()
     {

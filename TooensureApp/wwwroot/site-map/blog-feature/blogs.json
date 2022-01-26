@@ -25,5 +25,13 @@
     "title": "Pending review",
     "content": "The Ready App is pending review and has some nice animation expriments consisting of user navigation flow. We will try our best to fulfill our user experance.",
     "dateCreated": "Jan .24, 2022"
+  },
+  {
+    "id": 4,
+    "blogType":"Updates",
+    "sub": "Updates | Ready",
+    "title": "Crash Report",
+    "content": "Report crash caused by using deprecated google play services. And has been efficently solved by emplementing more up-to-date implementation. The Ready App will now be released in a few days pending review. Sorry for the inconvenience",
+    "dateCreated": "Jan .25, 2022"
   }
 ]
